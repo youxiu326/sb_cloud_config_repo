@@ -1,0 +1,15 @@
+zuul:
+  routes:
+    sb-product: #随意取
+      path: /sb-product/** # 真实访问路径 /sb-product/** -> sb-cloud-product/**
+      serviceId: sb-cloud-product
+      sensitiveHeaders:
+  ignored-patterns: /sb-cloud-order/order/getProduct,/sb-cloud-product/product/getMsg
+#  简洁写法
+#zuul:
+#  routes:
+#    sb-cloud-product: sb-product
+
+management:
+  security:
+    enabled: false
